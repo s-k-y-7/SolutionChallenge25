@@ -1,0 +1,11 @@
+{% extends 'InjurySupport/base.html' %}
+
+{% block content %}
+  <h1>Welcome, {{ user.username }}</h1>
+  <p>This is your profile page.</p>
+  <form method="post" action="{% url 'logout' %}" style="margin: 0;">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+    <!-- <a href="{% url 'logout' %}">Logout</a> -->
+  </form>
+{% endblock %}

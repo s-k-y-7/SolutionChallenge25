@@ -1,0 +1,35 @@
+{% extends 'InjurySupport/base.html' %}
+
+{% block content %}
+<h2>Your Injury History</h2>
+
+{% if injuries %}
+    <ul>
+        {% for injury in injuries %}
+            <li>
+                <strong>Injury Type:</strong> {{ injury.injury_type }}
+                {% if injury.injury_type == 'Other' %}
+                    ({{ injury.other_injury }})
+                {% endif %}
+                <br>
+                <strong>Severity:</strong> {{ injury.severity }}
+                <br>
+                <strong>Recovery Time:</strong> {{ injury.recovery_time }}
+                <br>
+                <strong>Treatment Taken:</strong> {{ injury.treatment_taken }}
+                {% if injury.treatment_taken %}
+                    <br>
+                    <strong>Treatment Types:</strong> {{ injury.treatment_types.all|join:", " }}
+                    <br>
+                    <strong>Treatment Effectiveness:</strong> {{ injury.treatment_effectiveness }}/10
+                {% endif %}
+            </li>
+            <hr>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No injury records found. You can add one below.</p>
+{% endif %}
+
+<a href="{% url 'add_injury' %}" class="btn btn-primary">Add Injury</a>
+{% endblock %}

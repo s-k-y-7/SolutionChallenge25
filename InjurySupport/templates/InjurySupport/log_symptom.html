@@ -1,0 +1,10 @@
+{% extends 'InjurySupport/base.html' %}
+
+{% block content %}
+<h2>Log Your Current Symptoms</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

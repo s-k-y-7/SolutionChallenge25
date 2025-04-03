@@ -1,4 +1,6 @@
 {% extends 'InjurySupport/base.html' %}
 {% block content %}
-  <h3>You should take your time and rest more.</h3>
+    <h2>Personalized AI Recovery Insights</h2>
+    <p>{{ request.session.ai_suggestion }}</p>
+    <a href="{% url 'profile' %}">Back to Profile</a>
 {% endblock %}

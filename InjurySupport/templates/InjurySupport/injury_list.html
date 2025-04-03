@@ -23,6 +23,10 @@
                     <br>
                     <strong>Treatment Effectiveness:</strong> {{ injury.treatment_effectiveness }}/10
                 {% endif %}
+            </br>
+                <a href="{% url 'delete_injury' injury.id %}" onclick="return confirm('Are you sure you want to delete this entry?');">
+                    Delete
+                </a>
             </li>
             <hr>
         {% endfor %}
@@ -30,6 +34,13 @@
 {% else %}
     <p>No injury records found. You can add one below.</p>
 {% endif %}
+<!-- {% for injury in injuries %}
+    <p>{{ injury.name }} - {{ injury.description }}</p>
+    <a href="{% url 'delete_injury' injury.id %}" onclick="return confirm('Are you sure you want to delete this entry?');">
+        Delete
+    </a>
+{% endfor %} -->
+
 
 <a href="{% url 'add_injury' %}" class="btn btn-primary">Add Injury</a>
 {% endblock %}

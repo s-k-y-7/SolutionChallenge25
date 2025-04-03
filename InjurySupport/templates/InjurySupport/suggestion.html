@@ -1,4 +1,6 @@
 {% extends 'InjurySupport/base.html' %}
 {% block content %}
-  <h3>Suggestions based on your Symptoms will be displayed here.</h3>
+    <h2>Your AI-Powered Recovery Recommendations</h2>
+    <p>{{ request.session.ai_suggestion }}</p>
+    <a href="{% url 'profile' %}">Back to Profile</a>
 {% endblock %}

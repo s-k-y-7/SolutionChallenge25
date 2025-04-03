@@ -101,6 +101,7 @@ class SymptomLog(models.Model):
 
 class RestAndRecovery(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    recovering_from = models.CharField(max_length=255, blank=True, null=True)
     sleep_hours = models.DecimalField(max_digits=4, decimal_places=2)
     sleep_quality = models.PositiveIntegerField(choices=[(i, str(i)) for i in range(1, 11)])
     on_medication = models.BooleanField(default=False)

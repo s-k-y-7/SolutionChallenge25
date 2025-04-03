@@ -20,5 +20,7 @@ urlpatterns = [
     path('suggestion/', views.suggestion, name='suggestion'),
     path('rest_and_recovery/', views.rest_and_recovery, name='rest_and_recovery'),
     path('rest_suggestions', views.rest_suggestions, name='rest_suggestions'),
+    path('injurysupport/injury/delete/<int:injury_id>/', views.delete_injury, name='delete_injury'),
+
     
 ]

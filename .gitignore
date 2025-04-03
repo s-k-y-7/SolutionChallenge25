@@ -7,3 +7,13 @@ venv/
 *.log
 .settings/
 media/
+
+# Ignore environment variables
+.env
+*.env
+
+# Ignore secret settings
+settings_local.py
+
+# Ignore AI API keys if stored in a file
+ai_keys.json

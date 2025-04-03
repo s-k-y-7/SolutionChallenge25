@@ -4,7 +4,13 @@
 <h2>Rest and Recovery Log</h2>
 <form method="post">
     {% csrf_token %}
+    <label>Recovering From:</label>
+    <input type="text" name="recovering_from" value="{{ recovering_from }}">
+    <br><br>
     {{ form.as_p }}
     <button type="submit">Submit</button>
 </form>
 {% endblock %}
+
+
+
